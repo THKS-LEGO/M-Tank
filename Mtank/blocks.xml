@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EditorDefinitions>
+	<PolyGroups ModuleName="THKS Advanced Motor Controllers" ModuleVersion="1.0">
+			<PolyGroup Name="MoveTank_M" BlockFamily="Action">
+        	<Parameter Name="Ports" CompilerDirectives="TwoOutputPorts" Direction="Input" DefaultValue="1.B+C" />
+        	<Parameter Name="Brake At End" Direction="Input" DataType="Boolean" DefaultValue="True" Identification="builtin://Identification_BrakeAtEnd.xml" Configuration="builtin://Identification_BrakeAtEnd.xml" />
+      		<Parameter Name="Speed Left" Configuration="SliderVertical.custom" Identification="builtin://Identification_Speed.xml" Direction="Input" DataType="Single" EducationDefaultValue="50" RetailDefaultValue="75" />
+      		<Parameter Name="Speed Right" Configuration="SliderVertical.custom" Identification="builtin://Identification_Speed.xml" Direction="Input" DataType="Single" EducationDefaultValue="50" RetailDefaultValue="75" />
+		 	<Hardware>
+			  <AlternativePolyGroupName>Motor</AlternativePolyGroupName>
+			  <AlternativePolyGroupName>MediumMotor</AlternativePolyGroupName>
+			  <EV3AutoID>7</EV3AutoID>
+			  <OtherAutoID>8</OtherAutoID>
+			  <Direction>Output</Direction>
+			  <DefaultPort>1.B+C</DefaultPort>
+		 	</Hardware>
+		    <Block>
+        	  <Mode>Stop_M</Mode>
+        	  <Reference Type="VILib" Name="MoveTankStop_M.vix" />
+        	  <ParameterReference Name="Ports" />
+        	  <ParameterReference Name="Brake At End" />
+        	  <Hardware>MotorLarge</Hardware>
+      		</Block>
+      		<Block>
+        	  <Mode>Unlimited_M</Mode>
+        	  <Reference Type="VILib" Name="MoveTankMode_M.vix" />
+        	  <ParameterReference Name="Ports" />
+        	  <ParameterReference Name="Speed Left" />
+        	  <ParameterReference Name="Speed Right" />
+        	  <Hardware>MotorLarge</Hardware>
+      		</Block>
+      		<Block>
+        	  <Mode>Degrees_M</Mode>
+        	  <Reference Type="VILib" Name="MoveTankDistance_M.vix" />
+        	  <ParameterReference Name="Ports" />
+        	  <ParameterReference Name="Speed Left" />
+        	  <ParameterReference Name="Speed Right" />
+        	  <ParamInfo Name="Degrees" Identification="builtin://Identification_DegreesAngle.xml" Direction="Input" DataType="Single" DefaultValue="360" />
+         	  <ParameterReference Name="Brake At End" />
+              <PaletteInfo Weight="0.5" PaletteName="Move Tank_M" />
+        	  <Hardware>MotorLarge</Hardware>
+              <Flags></Flags>
+      		</Block>
+      		<Block>
+        	  <Mode>Rotations_M</Mode>
+        	  <Reference Type="VILib" Name="MoveTankDistanceRotations_M.vix" />
+        	  <ParameterReference Name="Ports" />
+        	  <ParameterReference Name="Speed Left" />
+        	  <ParameterReference Name="Speed Right" />
+        	  <ParamInfo Name="Rotations" Identification="builtin://Identification_NumberRotations.png" Direction="Input" DataType="Single" DefaultValue="1" />
+        	  <ParameterReference Name="Brake At End" />
+        	  <Hardware>MotorLarge</Hardware>
+        	  <Flags></Flags>
+      		</Block>
+    		<Block>
+        	  <Mode>Time_M</Mode>
+        	  <Reference Type="VILib" Name="MoveTankTime_M.vix" />
+        	  <ParameterReference Name="Ports" />
+        	  <ParameterReference Name="Speed Left" />
+        	  <ParameterReference Name="Speed Right" />
+        	  <ParamInfo Name="Seconds" Identification="builtin://Identification_Time.png" Direction="Input" DataType="Single" DefaultValue="1" MinValue="0" />
+        	  <ParameterReference Name="Brake At End" />
+        	  <Hardware>MotorLarge</Hardware>
+        	  <Flags></Flags>
+      		</Block>
+		</PolyGroup>
+    </PolyGroups>
+</EditorDefinitions>
