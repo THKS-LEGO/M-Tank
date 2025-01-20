@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<EditorStrings>
+	<PolyGroups ModuleName="THKS Advanced Motor Controllers">
+	    <PolyGroup Name="MoveTank_M" DisplayName="MoveTank(Medium Motor)">
+    		<Description><![CDATA[<p>Context help for PolyGroup <b>Move Tank</b></p>]]></Description>
+    	  	<Parameter Name="Ports" DisplayName="Ports" Link="page.html?Path=editor%2FPortSelector.html#Ports">
+    		 <Description><![CDATA[Many programming blocks require that you select the ports on the EV3 Brick (A, B, C, D, 1, 2, 3, and 4) that these blocks will use. The Port Selectors are in the top right-hand corner of these blocks.]]></Description>
+    	  	</Parameter>
+    		<Parameter Name="Brake At End" DisplayName="Brake at End">
+    	     <Description><![CDATA[<p><b>Type:</b> Logic<br/><b>Allowed Values:</b> True/False<br/><b>Notes:</b> Applies when the block finishes.<br/>If True, the motors are stopped immediately and held in position.<br/>If False, motor power stops and the motors are allowed to coast.</p>]]></Description>
+    		</Parameter>
+    		<Parameter Name="Speed Left" DisplayName="Power Left (Inversed)">
+    	     <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Allowed Values:</b> -100 to 100<br/><b>Notes:</b> Motor power level for the left motor.<br/>See Motor Power and Direction.</p>]]></Description>
+    		</Parameter>
+     		<Parameter Name="Speed Right" DisplayName="Power Right">
+    	     <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Allowed Values:</b> -100 to 100<br/><b>Notes:</b> Motor power level for the right motor.<br/>See Motor Power and Direction.</p>]]></Description>
+    		</Parameter>
+     		<Parameter Name="Seconds" DisplayName="Seconds">
+             <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Allowed Values:</b> > 0<br/><b>Notes:</b> Movement time in seconds.</p>]]></Description>
+        	</Parameter>
+        	<Parameter Name="Degrees" DisplayName="Degrees">
+             <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Allowed Values:</b> Any Number<br/><b>Notes:</b> Amount of movement amount in degrees. 360 degrees make a full rotation.</p>]]></Description>
+        	</Parameter>
+        	<Parameter Name="Rotations" DisplayName="Rotations">
+             <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Allowed Values:</b> Any Number<br/><b>Notes:</b> Amount of movement in rotations.</p>]]></Description>
+            </Parameter>
+        	<Block Mode="Stop_M" DisplayName="Off">
+             <Description><![CDATA[The Off mode turns both motors off. Use the Off mode to stop a robot that was started by the On mode earlier in the program. See the example above.If Brake at End is True, the motors are stopped immediately. The motors will be held in their stopped position until another Move or Motor block starts them, or until the program ends. If Brake at End is False, power to the motors is simply turned off. The motors will coast using any remaining momentum until they stop, or until another Move or Motor block starts.]]></Description>
+        	</Block>
+        	<Block Mode="Unlimited_M" DisplayName="On">
+             <Description><![CDATA[The On mode turns both motors on, then immediately continues to the next block in the program. You can control the speed and direction of the motors using the Power Left and Power Right inputs. The motors will run until they are stopped or changed by another block later in the program, or until the program ends.]]></Description>
+        	</Block>
+        	<Block Mode="Time_M" DisplayName="On for Seconds">
+             <Description><![CDATA[On for Seconds turns both motors on for the number of seconds in the Seconds input, then turns them off.  The block will wait until the time has passed before the program will continue to the next block. You can control the speed and direction of your robot using the Power Left and Power Right inputs. Use Brake at End to stop your robot after exactly the specified number of seconds.]]></Description>
+        	</Block>
+        	<Block Mode="Degrees_M" DisplayName="On for Degrees">
+             <Description><![CDATA[On for Degrees turns both motors on, waits until one of them has turned for the number of degrees of rotation in the Degrees input, and then turns both motors off. This can be used to make your robot travel a specific distance or turn a specific amount. 360 degrees of rotation corresponds to one full turn of a motor.You can control the speed and direction of your robot using the Power Left and Power Right inputs. Use Brake at End to stop your robot after exactly the specified number of seconds.]]></Description>
+        	</Block>
+        	<Block Mode="Rotations_M" DisplayName="On for Rotations">
+             <Description><![CDATA[On for Rotations turns both motors on, waits until one of them has turned for the number of rotations in the Rotations input, then turns both motors off. This can be used to make your robot travel a specific distance or turn a specific amount.You can control the speed and direction of your robot using the Power Left and Power Right inputs. Use Brake at End to stop your robot after exactly the specified number of seconds.]]></Description>
+        	</Block>	
+		</PolyGroup>
+	</PolyGroups>
+</EditorStrings>
